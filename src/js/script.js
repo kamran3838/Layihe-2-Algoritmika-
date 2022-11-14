@@ -1,35 +1,29 @@
-
-class Message {
-    constructor(author, text) {
-     this.author = author;
-     this.time = new Date();
-     this.text = text;
+class Message{
+    arr=[];
+    constructor(name,text){
+       this.name=name;
+       text=this.text
     }
-   
-    toString() {
-        return `${this.time.getHours()}:${this.time.getMinutes()} ${this.author}: ${this.text}`
-     }
-   }
-   
-   class Messenger {
-    constructor(){
-        this.messages = []
+        toString(){
+            return str=this.name+this.text+this.date;
+        }
+        
     }
-    show_history(){
-        this.messages.forEach(item=>console.log(item))
+    class Messenger extends Message{
+        show_history(){
+            let now = this.date;
+          this.arr.forEach((item)=>{
+            console.log(`${item.date.getHours()}:${item.date.getMinutes()}:${item.name}:${item.texter}}`)
+          })
+        }
+        send(author, text){
+           this.arr.push({name:author,texter:text,date:new Date()})
+        }
     }
-    send(author,text){
-        let message = new Message(author, text)
-        this.messages.push(message.toString())
-    }
-   }
-   
-   const mesaj = new Messenger();
-   mesaj.send('Adil', 'ilk mesaj')
-   mesaj.send('Meryem', 'ikinci mesaj')
-   mesaj.show_history()
-
-
+    let messenger = new Messenger()
+    messenger.send('Adil', 'ilk mesaj')
+    messenger.send('Məryəm', 'İkinci mesaj')
+    messenger.show_history()
 
 
 
